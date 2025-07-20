@@ -1,0 +1,20 @@
+version: '3.3'
+
+services:
+  website-staging:
+    container_name: recruitsmartly-admin-staging
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: recruitsmartly-admin-staging:latest
+    ports:
+      - "8030:8035"
+    environment:
+      - NODE_ENV=staging
+    restart: unless-stopped
+    networks:
+      - rs_admin-staging-network
+
+networks:
+  rs_admin-staging-network:
+    driver: bridge

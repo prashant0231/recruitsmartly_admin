@@ -1,0 +1,45 @@
+{
+  "name": "recruitsmartly_admin",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+   "dev": "dotenv -e .env.local -- cross-env NODE_ENV=development next dev",
+  "dev:staging": "npx dotenv -e .env.staging -- cross-env NODE_ENV=development next dev",
+   "dev:prod": "npx dotenv -e .env.production -- cross-env NODE_ENV=development next dev",
+ 
+   "build": "dotenv -e .env.production -- cross-env NODE_ENV=production next build",
+   "build:staging": "dotenv -e .env.staging -- cross-env NODE_ENV=staging next build",
+ 
+   "start": "dotenv -e .env.production -- cross-env NODE_ENV=production next start",
+   "start:staging": "dotenv -e .env.staging -- cross-env NODE_ENV=staging next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.1.1",
+    "@reduxjs/toolkit": "^2.8.2",
+    "axios": "^1.10.0",
+    "cross-env": "^7.0.3",
+    "dotenv-cli": "^8.0.0",
+    "framer-motion": "^12.20.5",
+    "js-cookie": "^3.0.5",
+    "lucide-react": "^0.525.0",
+    "next": "15.0.3",
+    "react": "19.0.0-rc-66855b96-20241106",
+    "react-dom": "19.0.0-rc-66855b96-20241106",
+    "react-hook-form": "^7.60.0",
+    "react-icons": "^5.5.0",
+    "react-redux": "^9.2.0",
+    "yup": "^1.6.1"
+  },
+  "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "15.0.3",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}

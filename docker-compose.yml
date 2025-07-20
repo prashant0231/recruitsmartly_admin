@@ -1,0 +1,22 @@
+version: '3.3'
+
+services:
+  admin:
+    container_name: recruitsmartly-admin
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8035:8035"
+    environment:
+      - NODE_ENV=production
+      # Uncomment the following line to disable telemetry
+      # - NEXT_TELEMETRY_DISABLED=1
+    restart: unless-stopped
+    # Add healthcheck to ensure the application is running properly
+    networks:
+      - rs_admin-network
+
+networks:
+  rs_admin-network:
+    driver: bridge 
